@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 0 25px 0;
+    margin: 0 auto;
+}
+
+.slider-box{
+    width: 500px;
+    height: 613px;
+    max-width: 500px;
+    max-height: 613px;
+    border: 1px solid yellow;
+}

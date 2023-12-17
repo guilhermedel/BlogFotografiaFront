@@ -1,4 +1,51 @@
-.container{
-    width: 100%;
-    
+.container {
+  width: 100%;
+  height: 85px;
+  background-color: var(--navbarBackground);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  a {
+    text-decoration: none;
+    color: white;
+    font-size: x-large;
+  }
+  a:hover {
+    color: rgb(134, 133, 133);
+  }
+}
+
+.menu {
+  display: none;
+  color: white;
+  font-size: xx-large;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+}
+
+.list-item {
+  margin-left: 45px;
+  cursor: pointer;
+}
+
+@media all and (max-width: 900px) {
+  .container {
+    justify-content: space-between;
+    padding: 0 20px 0 30px;
+  }
+  .menu {
+    display: block;
+  }
+  .list-item {
+    display: none;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .logo {
+    width: 180px;
+  }
 }
