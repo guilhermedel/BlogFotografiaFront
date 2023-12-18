@@ -31,7 +31,7 @@
   cursor: pointer;
 }
 
-@media all and (max-width: 900px) {
+@media all and (max-width: 992px) {
   .container {
     justify-content: space-between;
     padding: 0 20px 0 30px;
@@ -44,8 +44,12 @@
   }
 }
 
-@media all and (max-width: 500px) {
+@media all and (max-width: 600px) {
+  .container {
+    justify-content: space-between;
+    padding: 0 5px 0 5px;
+  }
   .logo {
-    width: 180px;
+    width: 150px;
   }
 }

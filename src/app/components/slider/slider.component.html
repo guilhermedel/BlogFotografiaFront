@@ -1,5 +1,19 @@
 <div class="container">
-    <div class="slider-box">
-        
+  <div class="slider-box">
+    <img
+      *ngFor="let image of images; let i = index"
+      class="fade"
+      [src]="image"
+      alt=""
+      [ngClass]="{ 'image-active': selectedIndex === i }"
+    />
+    <div class="slider-container">
+      <div
+        *ngFor="let image of images; let i = index"
+        class="slider-dot"
+        [ngClass]="{ active: selectedIndex === i }"
+        (click)="selectImage(i)"
+      ></div>
     </div>
+  </div>
 </div>
