@@ -16,7 +16,7 @@ export class SliderComponent {
       if (this.selectedIndex === this.images.length) {
         this.selectedIndex = 0;
       }
-    }, 3000);
+    }, 4000);
   }
 
   selectImage(i: number) {

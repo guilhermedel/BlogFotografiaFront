@@ -1,4 +1,32 @@
 <div class="container">
-    <app-navbar/>
-    <app-slider/>
+  <div class="navbar">
+    <a href="/"><img class="logo" src="/assets/Logo.png" alt="" /></a>
+    <ul class="nav-list">
+      <fa-icon class="menu" [icon]="faBars" />
+      <li class="list-item"><a href="/about">Sobre</a></li>
+      <li class="list-item"><a href="/contact">Contato</a></li>
+    </ul>
+  </div>
+  <div class="slider">
+    <div class="slider-box">
+      <img
+        *ngFor="let image of images; let i = index"
+        class="fade"
+        [src]="image"
+        alt=""
+        [ngClass]="{ 'image-active': selectedIndex === i }"
+      />
+      <div class="slider-container">
+        <div
+          *ngFor="let image of images; let i = index"
+          class="slider-dot"
+          [ngClass]="{ active: selectedIndex === i }"
+          (click)="selectImage(i)"
+        ></div>
+      </div>
+    </div>    
+  </div>
+  <div id="about">
+    
+  </div>
 </div>

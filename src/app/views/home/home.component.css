@@ -6,3 +6,127 @@
   height: 100vh;
   background-color: var(--backgroundColor);
 }
+
+.navbar {
+  width: 100%;
+  height: 85px;
+  background-color: var(--navbarBackground);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  a {
+    text-decoration: none;
+    color: white;
+    font-size: x-large;
+  }
+  a:hover {
+    color: rgb(134, 133, 133);
+  }
+}
+
+.menu {
+  display: none;
+  color: white;
+  font-size: xx-large;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+}
+
+.list-item {
+  margin-left: 45px;
+  cursor: pointer;
+}
+
+@media all and (max-width: 992px) {
+  .navbar {
+    justify-content: space-between;
+    padding: 0 20px 0 30px;
+  }
+  .menu {
+    display: block;
+  }
+  .list-item {
+    display: none;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .navbar {
+    justify-content: space-between;
+    padding: 0 5px 0 5px;
+  }
+  .logo {
+    width: 150px;
+  }
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.slider-box {
+  width: 80vw;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.7);
+  img {
+    display: none;
+    border-radius: 15px;
+    object-fit: contain;
+  }
+}
+
+.slider-box img.image-active {
+  display: block;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.slider-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.slider-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  background-color: white;  
+  transition: opacity 0.6s ease-in-out;
+  opacity: 0.5;
+}
+
+.active,
+.slider-dot:hover {
+  opacity: 1;
+}
+
