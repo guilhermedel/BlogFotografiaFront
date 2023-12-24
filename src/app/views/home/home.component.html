@@ -1,32 +1,83 @@
 <div class="container">
-  <div class="navbar">
-    <a href="/"><img class="logo" src="/assets/Logo.png" alt="" /></a>
+  <nav class="navbar">
+    <img class="logo" (click)="scrollToTop()" src="/assets/Logo.png" alt="" />
     <ul class="nav-list">
       <fa-icon class="menu" [icon]="faBars" />
-      <li class="list-item"><a href="/about">Sobre</a></li>
-      <li class="list-item"><a href="/contact">Contato</a></li>
+      <li class="list-item" (click)="scrollTo('about')">Sobre</li>
+      <li class="list-item" (click)="scrollTo('contact')">Contato</li>
     </ul>
-  </div>
-  <div class="slider">
-    <div class="slider-box">
-      <img
-        *ngFor="let image of images; let i = index"
-        class="fade"
-        [src]="image"
-        alt=""
-        [ngClass]="{ 'image-active': selectedIndex === i }"
-      />
-      <div class="slider-container">
-        <div
+  </nav>
+  <main class="box-container">
+    <section id="home" class="home">
+      <div class="slider-box">
+        <img
           *ngFor="let image of images; let i = index"
-          class="slider-dot"
-          [ngClass]="{ active: selectedIndex === i }"
-          (click)="selectImage(i)"
-        ></div>
+          class="fade"
+          [src]="image"
+          alt=""
+          [ngClass]="{ 'image-active': selectedIndex === i }"
+        />
+        <div class="slider-container">
+          <div
+            *ngFor="let image of images; let i = index"
+            class="slider-dot"
+            [ngClass]="{ active: selectedIndex === i }"
+            (click)="selectImage(i)"
+          ></div>
+        </div>
       </div>
-    </div>    
-  </div>
-  <div id="about">
-    
-  </div>
+    </section>
+    <section id="about" class="about">
+      <div class="box-about">
+        <figure></figure>
+        <article>
+          <p>
+            <span>As imagens podem ser tudo, nunca só um registro.</span>
+            <br /><br />
+            A lente mira para a intimidade de uma vida, para um espaço pensado
+            para confraternizar existências. Ou mesmo para a arquitetura que
+            exibe o tempo na sua estrutura imponente para ser avistada de pontos
+            da urbe.<br /><br />
+            Há histórias sempre na órbita de um fotógrafo. Há miudezas
+            sobrevoando os seus olhos, a sua pele. Um corpo que sente por
+            inteiro para assim enquadrar a parte de uma paisagem, um capítulo do
+            ordinário. Dependendo da sensibilidade; o extraordinário.
+            <br /><br />
+            Dos lares com suas frestas abertas em janelas e varandas para que as
+            pupilas dos habitantes alcancem o azul intenso do oceano, do céu.
+            Também os feixes luminosos solares fazedores de sombras brincalhonas
+            e geometrias efêmeras no espaço.<br /><br />
+            A vida flui nas minúcias perceptíveis e outras nem tanto. Mas cabe
+            ao fotógrafo perceber, prenunciar a matéria que o envolve. A
+            vivência revelada numa metragem. A silhueta do mobiliário que vira
+            poesia. As flores descansadas em vasos. Os livros sobrepostos em
+            (des)ordem. Os objetos espalhados a contar uma narrativa.<br /><br />
+            Quem não precisa de beleza, encharcar-se com a demora de um olhar,
+            com o prazer invisível e visível? Avistar uma cena demarcada pela
+            subjetividade de quem pisa naquele chão...<br /><br />
+            Traduzir a luz do sol. Esperá-lo forjar sua cena, os climas e
+            atmosferas ajustados com sua presença. Seduzi-lo. Não é questão de
+            tempo, somente busca por outras consciências de visão.<br /><br />
+            As imagens podem ser tudo! Tudo mesmo que se fabula, se cultiva no
+            dia a dia, se capta com o olhar e a lente. Mas nunca serão só um
+            registro.
+          </p>
+        </article>
+      </div>
+    </section>
+    <section id="contact" class="contact">
+      <div class="box-contact">
+        <figure></figure>
+        <footer>
+          <span>contato</span>
+          <div class="icons-box">
+            <fa-icon [icon]="faInstagram"/>
+            <fa-icon [icon]="faWhatsapp"/>
+            <fa-icon [icon]="faEnvelope"/>
+            <fa-icon [icon]="faFacebook"/>
+          </div>
+        </footer>
+      </div>
+    </section>
+  </main>
 </div>
